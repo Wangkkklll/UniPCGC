@@ -23,6 +23,23 @@ We propose an efficient unified point cloud geometry compression framework UniPC
 Ilustration of the proposed UniPCGC framework. 
 </div>
 
+## 🔑 Setup
+Type the command for general installation
+```
+conda env create -f environment.yml
+```
+
+For the installation of [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine), see the official repository.
+
+## 🧩 Dataset Preparation
+Please refer to the following links to obtain the data. We thank these great works.
+| Datasets | Download Link | 
+|:-----: |:-----: |
+| ShapeNet | [Link](https://github.com/NJUVISION/SparsePCGC)  |
+| 8iVFB | [Link](http://plenodb.jpeg.org/pc/8ilabs/)  |
+| Testdata | [Baidu Netdisk](https://pan.baidu.com/s/1p3ubD5m0yGkmDMSK7pbxAQ?pwd=kkll) (kkll) |
+
+
 ## 🔎 Contact
 If your have any comments or questions, feel free to contact [kangliwang@stu.pku.edu.cn](kangliwang@stu.pku.edu.cn).
 
