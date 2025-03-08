@@ -12,10 +12,11 @@
 
 ## 📣 News
 - [24-12-09] Our paper has been accepted to AAAI 2025.
+- [25-03-08] We release lossless compression code.
 
 ## Todo
 - [x] ~~Release training code~~ 
-- [ ] ~~Release inference code~~
+- [x] ~~Release inference code~~
 - [ ] Release the Paper
 - [ ] Release checkpoint
 - [ ] Simplify the code
