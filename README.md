@@ -17,7 +17,7 @@
 ## Todo
 - [x] ~~Release training code~~ 
 - [x] ~~Release inference code~~
-- [ ] Release the Paper
+- [x] ~~Release the Paper~~
 - [ ] Release checkpoint
 - [ ] Simplify the code
 ## 📌 Introduction
