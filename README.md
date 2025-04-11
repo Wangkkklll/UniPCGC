@@ -65,10 +65,15 @@ Thanks for their awesome works ([PCGCv2](https://github.com/NJUVISION/PCGCv2) an
 ## 📘 Citation
 Please consider citing our work as follows if it is helpful.
 ```bibtex
-@inproceedings{wang2025unipcgc,
-  title={UniPCGC: Towards Practical Point Cloud Geometry Compression via An Efficient Unified Approach},
-  author={Wang, Kangli and Gao, Wei},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  year={2025}
-}
+@article{Wang_Gao_2025,
+title={UniPCGC: Towards Practical Point Cloud Geometry Compression via an Efficient Unified Approach},
+volume={39},
+url={https://ojs.aaai.org/index.php/AAAI/article/view/33387},
+DOI={10.1609/aaai.v39i12.33387},
+number={12},
+journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+author={Wang, Kangli and Gao, Wei},
+year={2025},
+month={Apr.},
+pages={12721-12729} }
 ```
