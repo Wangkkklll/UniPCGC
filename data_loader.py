@@ -60,12 +60,12 @@ def collate_pointcloud_fn(list_data):
 
 
 class PCDataset(torch.utils.data.Dataset):
-    def __init__(self, files, transforms=None, voxel_size=0.02, resolution=None, qlevel=None, max_num=1e7, augment=False):
+    def __init__(self, files, transforms=None, voxel_size=1, resolution=None, qlevel=None, max_num=1e7, augment=False):
         self.files = []
         self.cache = {}
         self.files = files
         self.transforms = transforms
-        # assert voxel_size is None or resolution is None
+        assert voxel_size is None or resolution is None
         self.voxel_size = voxel_size
         self.resolution = resolution
         self.qlevel = qlevel
@@ -81,29 +81,21 @@ class PCDataset(torch.utils.data.Dataset):
         if filedir.endswith('bin'):
             self.voxel_size = None
             self.resolution = None
-        if filedir.endswith('ply'):
-            self.voxel_size = None
-            self.resolution = None
-            # self.qlevel = None
+            self.qlevel = 12
         if idx in self.cache:
             coords, feats = self.cache[idx]
         else:
             # import time
             # start = time.time()
             coords = read_coords(filedir)
-            # print(coords.shape)
+            # coords = quantize_precision(coords, precision=self.voxel_size, quant_mode='round', return_offset=False)
             if self.voxel_size is not None:
                 coords = quantize_precision(coords, precision=self.voxel_size, quant_mode='round', return_offset=False)
-                # print("11111111111")
             elif self.resolution is not None:
                 coords, _, _ = quantize_resolution(coords, resolution=self.resolution, quant_mode='round', return_offset=False)
-                # print("222222222222")
             elif self.qlevel is not None:
                 coords, _, _, _ = quantize_octree(coords, qlevel=self.qlevel, quant_mode='round', return_offset=False)
-                # print("333333333333")
-                # print(self.qlevel)
             coords = np.unique(coords.astype('int'), axis=0).astype('int')
-            # print(coords.shape)
             # print('DBG!!! loading time', round(time.time() - start, 4), filedir, len(coords), coords.max() - coords.min())
             # print('DBG!!! loading', len(coords), coords.max() - coords.min())
             if self.augment: 
@@ -123,7 +115,6 @@ class PCDataset(torch.utils.data.Dataset):
         feats = feats.astype("float32")
 
         return (coords, feats)
-
 
 
 from torch.utils.data import DataLoader
