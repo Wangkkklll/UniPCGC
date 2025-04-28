@@ -10,7 +10,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("--ckptdir", default='./ckpts/epoch_6.pth')
+    parser.add_argument("--ckptdir", default='./ckpts/pretrained/lossless_8i.pth')
     parser.add_argument("--filedir", default='/public/DATA/wkl/8i5/loot_vox10_1200.ply')
     parser.add_argument("--outdir", default='./output/') 
     args = parser.parse_args()
@@ -36,11 +36,11 @@ if __name__ == '__main__':
     # encode
     start_time = time.time()
     x_C = x.C[:,1:]
-    x_enc,_ = coder.encode(x_C)
+    _ = coder.encode(x_C)
     print('Enc Time:\t', round(time.time() - start_time, 4), 's')
     # decode
     start_time = time.time()
-    x_dec = coder.decode(x_enc)
+    x_dec = coder.decode()
     print('Dec Time:\t', round(time.time() - start_time, 3), 's')
     # 验证无损:
     x_dec = sort_spare_tensor(x_dec)
