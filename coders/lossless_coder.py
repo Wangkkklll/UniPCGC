@@ -106,7 +106,7 @@ class Coder():
             x = self.model.down(model_input)
             x = x.C[:,1:]
             
-            if len(x) <= 2: break
+            if len(x) <= 4: break
             T += 1
         initial_x = x.cpu().numpy()
         scale = np.array([T,T_ue])
@@ -117,22 +117,35 @@ class Coder():
         total_bits += os.path.getsize(prefix+'scale.bin')*8
         total_bits += os.path.getsize(prefix+'initial_x.bin')*8
         print("bpp: ",total_bits / number_of_points)
-        return x,total_bits
+        # print(x)
+        return total_bits
 
     @torch.no_grad()
-    def decode(self,x_enc, postfix='test'):
+    def decode(self, postfix='test'):
         prefix = self.filename + postfix + '/'
         assert os.path.exists(prefix)
         with open(prefix+'scale.bin', 'rb') as f:
             scale = np.frombuffer(f.read(4*2), dtype=np.int32)
         with open(prefix+'initial_x.bin', 'rb') as f:
-            x = np.frombuffer(f.read(4*3), dtype=np.int32).tolist()
+            file_content = f.read()
+            x_flat = np.frombuffer(file_content, dtype=np.int32)
+            if len(x_flat) % 3 == 0:
+                x_numpy = x_flat.reshape(-1, 3)
+            else:
+                x_numpy = x_flat.reshape(-1, 3)  # 或其他形状
+            x = torch.tensor(x_numpy).to(device)
+            x = torch.cat([torch.zeros(x.shape[0], 1).to(device), x], dim=1)
+        # print(x)
+      
         T_high = scale[0] 
         T_ue = scale[1]
         T = T_high
         NOW_tensor_stride = 2 **(T+1)
-        x = torch.tensor(x_enc).to(device)
-        x = torch.cat([torch.zeros(x.shape[0],1).to(device),x],dim=-1)
+        # print(x.shape)
+        # print(x)
+        # x = torch.tensor(x).to(device)
+        # x = torch.cat([torch.zeros(x.shape[0],1).to(device),x],dim=-1)
+        # print(x)
         model_input = ME.SparseTensor(features=torch.ones(x.shape[0],1), coordinates=x, tensor_stride=NOW_tensor_stride, device=device)
         while T >= 0:
             print("T:", T)
