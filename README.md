@@ -9,6 +9,11 @@
     <sup>1</sup>SECE, Peking University<br>
     <sup>2</sup>Peng Cheng Laboratory, Shenzhen, China
 </p>
+<p align="center">
+  <a href="https://arxiv.org/abs/2503.18541"><img src="https://img.shields.io/badge/Arxiv-2503.18541-b31b1b.svg?logo=arXiv" alt="arXiv"></a>
+  <a href="https://github.com/Wangkkklll/UniPCGC?tab=MIT-1-ov-file"><img src="https://img.shields.io/badge/License-MIT-yellow" alt="License"></a>
+  <a href="https://uni-pcgc.github.io/"><img src="https://img.shields.io/badge/Project_Page-UniPCGC-blue.svg" alt="Home Page"></a>
+</p>
 
 ## 📣 News
 - [24-12-09] Our paper has been accepted to AAAI 2025.
@@ -20,6 +25,11 @@
 - [x] ~~Release the Paper~~
 - [ ] Release checkpoint
 - [ ] Simplify the code
+
+## Links
+Our work on gaussian compression has also been released. Welcome to check it.
+- 🔥 [GausPcc](https://gauspcc.github.io/) [Arxiv'25]: Efficient 3D Gaussian Compression ! [[`Arxiv`](https://arxiv.org/abs/2505.18197)] [[`Project`](https://gauspcc.github.io/)]
+
 ## 📌 Introduction
 
 We propose an efficient unified point cloud geometry compression framework UniPCGC. It is a lightweight framework that supports lossy compression, lossless compression, variable rate and variable complexity. First, we introduce the Uneven 8-Stage Lossless Coder (UELC) in the lossless mode, which allocates more computational complexity to groups with higher coding difficulty, and merges groups with lower coding difficulty. Second, Variable Rate and Complexity Module (VRCM) is achieved in the lossy mode through joint adoption of a rate modulation module and dynamic sparse convolution. Finally, through the dynamic combination of UELC and VRCM, we achieve lossy compression, lossless compression, variable rate and complexity within a unified framework. Compared to the previous state-of-the-art method, our method achieves a compression ratio (CR) gain of 8.1\% on lossless compression, and a Bjontegaard Delta Rate (BD-Rate) gain of 14.02\% on lossy compression, while also supporting variable rate and variable complexity.
@@ -65,7 +75,7 @@ Thanks for their awesome works ([PCGCv2](https://github.com/NJUVISION/PCGCv2) an
 ## 📘 Citation
 Please consider citing our work as follows if it is helpful.
 ```bibtex
-@article{Wang_Gao_2025,
+@article{wang2025unipcgc,
 title={UniPCGC: Towards Practical Point Cloud Geometry Compression via an Efficient Unified Approach},
 volume={39},
 url={https://ojs.aaai.org/index.php/AAAI/article/view/33387},
