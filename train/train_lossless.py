@@ -23,7 +23,7 @@ def parse_args():
     parser.add_argument("--pre_loading", default='')
     parser.add_argument("--lr", type=float, default=6e-4)
     parser.add_argument("--aux_lr", type=float, default=1e-4)
-    parser.add_argument("--batch_size", type=int, default=2)
+    parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--epoch", type=int, default=50)
     parser.add_argument("--check_time", type=float, default=1,  help='frequency for recording state (min).') 
     parser.add_argument("--prefix", type=str, default='nonanchor_enhanced', help="prefix of checkpoints/logger, etc.")

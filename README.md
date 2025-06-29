@@ -16,15 +16,16 @@
 </p>
 
 ## 📣 News
-- [24-12-09] Our paper has been accepted to AAAI 2025.
-- [25-03-08] We release lossless compression code.
+- [24-12-09] 🔥 Our paper has been accepted to AAAI 2025.
+- [25-03-08] 🔥 We release lossless compression code.
+- [25-06-29] 🔥 We release all UniPCGC codes and [checkpoints](https://pan.baidu.com/s/1WsgMrXX3hmUvbuiPUZglHg?pwd=kkll).
 
 ## Todo
 - [x] ~~Release training code~~ 
 - [x] ~~Release inference code~~
 - [x] ~~Release the Paper~~
-- [ ] Release checkpoint
-- [ ] Simplify the code
+- [x] ~~Release checkpoint~~
+- [x] ~~Simplify the code~~
 
 ## Links
 Our work on gaussian compression has also been released. Welcome to check it.
@@ -48,13 +49,18 @@ conda env create -f environment.yml
 
 For the installation of [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine), see the official repository.
 
-## 🧩 Dataset Preparation
+## 🧩 Dataset Preparation and Pretrained Model
 Please refer to the following links to obtain the data. We thank these great works.
 | Datasets | Download Link | 
 |:-----: |:-----: |
 | ShapeNet | [Link](https://github.com/NJUVISION/SparsePCGC)  |
 | 8iVFB | [Link](http://plenodb.jpeg.org/pc/8ilabs/)  |
 | Testdata | [Baidu Netdisk](https://pan.baidu.com/s/1p3ubD5m0yGkmDMSK7pbxAQ?pwd=kkll) (kkll) |
+
+Please refer to the following links to obtain the pretrained models.
+| Models | Download Link | 
+|:-----: |:-----: |
+| UniPCGC | [Link](https://pan.baidu.com/s/1WsgMrXX3hmUvbuiPUZglHg?pwd=kkll)  |
 
 ## 🚀 Running
 For lossless compression, run the following code to train
@@ -65,6 +71,7 @@ run the following code to compress and decompress
 ```
 python unicoder_lossless.py --filedir "your dataset dir" --ckptdir "your ckpt dir"
 ```
+For more training scripts, please refer to [scripts](./script).
 
 ## 🔎 Contact
 If your have any comments or questions, feel free to contact [kangliwang@stu.pku.edu.cn](kangliwang@stu.pku.edu.cn).

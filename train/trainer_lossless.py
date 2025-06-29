@@ -198,9 +198,10 @@ class Trainer():
         start_time = time.time()
         for batch_step, (coords,feats) in enumerate(tqdm(dataloader)):
             self.optimizer.zero_grad()
-
+            # print(x)
             x = ME.SparseTensor(features=feats, coordinates=coords, 
             tensor_stride=1,device = device)
+            # print(x.shape)
             x1 = down(x)
             x1 = ME.SparseTensor(features=torch.ones_like(x1.F), coordinates=x1.C, 
             tensor_stride=x1.tensor_stride,device = x1.device) 
