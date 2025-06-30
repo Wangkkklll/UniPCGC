@@ -42,12 +42,20 @@ Ilustration of the proposed UniPCGC framework.
 </div>
 
 ## 🔑 Setup
+Our cuda version is 11.6. We recommend using the following command to complete the installation.
+```
+conda create -n unipcgc python=3.8
+conda activate unipcgc
+pip install -r requirements
+```
+After completing the above installation, you should also install MinkowskiEngine. For the installation of [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine), see the official repository. 
+
+Warn!!! The following yml environment is in the development version environment, which introduces many irrelevant libraries and is not recommended.
 Type the command for general installation
 ```
 conda env create -f environment.yml
 ```
 
-For the installation of [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine), see the official repository.
 
 ## 🧩 Dataset Preparation and Pretrained Model
 Please refer to the following links to obtain the data. We thank these great works.

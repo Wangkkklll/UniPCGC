@@ -1,0 +1,21 @@
+# Core deep learning and point cloud libraries
+torch==1.12.1+cu116
+torchvision==0.13.1+cu116
+torchsparse==2.1.0
+MinkowskiEngine==0.5.4
+open3d==0.16.0
+
+# Compression specific
+compressai==1.2.6
+torchac==0.9.3
+
+# Training and experiment tracking
+pytorch-lightning==2.0.4
+wandb==0.19.8
+
+# Common utilities
+numpy==1.24.3
+PyYAML==6.0.1
+tqdm==4.66.4
+plyfile==1.0.3
+trimesh==4.4.3
