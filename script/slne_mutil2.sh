@@ -1,6 +1,6 @@
 CUDA_VISIBLE_DEVICES=1 python train_lossy.py \
     --prefix sopa_one_slne_slim \
-    --batch_size 1 \
+    --batch_size 4 \
     --lr 8e-4 \
     --epoch 1 \
     --check_time 1\
@@ -14,7 +14,7 @@ CUDA_VISIBLE_DEVICES=1 python train_lossy.py \
 
 CUDA_VISIBLE_DEVICES=1 python train_lossy.py \
     --prefix sopa_one_slne_slim \
-    --batch_size 1 \
+    --batch_size 4 \
     --lr 8e-4 \
     --epoch 2 \
     --check_time 1\
@@ -30,7 +30,7 @@ CUDA_VISIBLE_DEVICES=1 python train_lossy.py \
 
 CUDA_VISIBLE_DEVICES=1 python train_lossy.py \
     --prefix sopa_one_slne_slim \
-    --batch_size 1 \
+    --batch_size 4 \
     --lr 8e-4 \
     --epoch 25 \
     --check_time 1\
