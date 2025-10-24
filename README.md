@@ -32,7 +32,7 @@ Our work on gaussian compression has also been released. Welcome to check it.
 - 🔥 [GausPcc](https://gauspcc.github.io/) [Arxiv'25]: Efficient 3D Gaussian Compression ! [[`Arxiv`](https://arxiv.org/abs/2505.18197)] [[`Project`](https://gauspcc.github.io/)]  
 
 Our work on any source point cloud compression has also been released. Its performance is better than UniPCGC. Welcome to check it.
-- 🔥 [GausPcc](https://anypcc.github.io/) [Arxiv'25]: Any Source Point Cloud Compression ! [[`Arxiv`](https://arxiv.org/abs/2510.20331)] [[`Project`](https://anypcc.github.io/)]
+- 🔥 [AnyPcc](https://anypcc.github.io/) [Arxiv'25]: Any Source Point Cloud Compression ! [[`Arxiv`](https://arxiv.org/abs/2510.20331)] [[`Project`](https://anypcc.github.io/)]
 
 ## 📌 Introduction
 
