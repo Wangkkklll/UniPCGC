@@ -15,6 +15,10 @@ def get_bits(probF, mask):
     bits = torch.sum(likelihood)
     return bits
 
+def get_bits_lossy(likelihood):
+    bits = -torch.sum(torch.log2(likelihood))
+
+    return bits
 
 def get_bce(data, groud_truth):
     """ Input data and ground_truth are sparse tensor.
@@ -46,4 +50,5 @@ def get_cls_metrics(pred, real):
     IoU = TP / (TP + FP + FN + 1e-7)
 
     return [round(precision, 4), round(recall, 4), round(IoU, 4)]
+
 
